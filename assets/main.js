@@ -109,6 +109,32 @@
       });
     });
 
+    /* cart drawer */
+    var cartToggle=document.querySelector('.cart-toggle');
+    var drawer=document.getElementById('cartDrawer');
+    var overlay=document.getElementById('cartOverlay');
+    var cartClose=document.getElementById('cartClose');
+    function openCart(){
+      if(!drawer)return;
+      drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');
+      if(overlay)overlay.classList.add('show');
+      document.body.style.overflow='hidden';
+      if(cartClose)cartClose.focus();
+    }
+    function closeCart(){
+      if(!drawer)return;
+      drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');
+      if(overlay)overlay.classList.remove('show');
+      document.body.style.overflow='';
+      if(cartToggle)cartToggle.focus();
+    }
+    if(cartToggle&&drawer){
+      cartToggle.addEventListener('click',openCart);
+      if(cartClose)cartClose.addEventListener('click',closeCart);
+      if(overlay)overlay.addEventListener('click',closeCart);
+      document.addEventListener('keydown',function(e){if(e.key==='Escape'&&drawer.classList.contains('open'))closeCart();});
+    }
+
     /* year */
     var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();
   });
