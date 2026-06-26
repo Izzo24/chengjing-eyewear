@@ -199,8 +199,8 @@ form label{display:block;font-family:var(--sans-tc);font-size:13px;letter-spacin
 form input,form select,form textarea{width:100%;background:var(--white);border:1px solid var(--line);padding:.85rem .95rem;font-family:var(--sans-tc);font-size:15px;color:var(--ink);transition:.25s var(--ease)}
 form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--ink)}
 .map{border:1px solid var(--line);background:var(--white);aspect-ratio:4/3;width:100%}
-.toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,140%);background:var(--ink);color:var(--paper);padding:.95rem 1.6rem;font-family:var(--sans-tc);font-size:14px;letter-spacing:.05em;z-index:90;transition:transform .45s var(--ease);box-shadow:0 16px 40px -18px rgba(0,0,0,.6)}
-.toast.show{transform:translate(-50%,0)}
+.toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,140%);background:var(--ink);color:var(--paper);padding:.95rem 1.6rem;font-family:var(--sans-tc);font-size:14px;letter-spacing:.05em;z-index:90;transition:transform .45s var(--ease);box-shadow:0 16px 40px -18px rgba(0,0,0,.6);visibility:hidden;opacity:0}
+.toast.show{transform:translate(-50%,0);visibility:visible;opacity:1}
 
 /* ---------- footer ---------- */
 .site-foot{background:var(--ink);color:var(--paper-2);padding:clamp(3rem,6vw,5rem) 0 2rem}
